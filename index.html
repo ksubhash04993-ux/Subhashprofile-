@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="Subhash Kumar — Cyber Security, Computer Science and Web Development portfolio.">
+<title>Subhash Kumar | Portfolio</title>
+<style>
+:root{
+  --bg:#0b1020;--panel:#121a2d;--panel2:#18233a;--text:#edf2ff;--muted:#aab6d3;
+  --line:rgba(255,255,255,.11);--accent:#7c9cff;--accent2:#45e0c1;--shadow:0 18px 45px rgba(0,0,0,.25)
+}
+[data-theme="light"]{
+  --bg:#f5f7fc;--panel:#fff;--panel2:#edf2ff;--text:#17213a;--muted:#58647f;
+  --line:rgba(23,33,58,.13);--accent:#315ee8;--accent2:#008e78;--shadow:0 18px 45px rgba(30,50,90,.10)
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 80% 0%,rgba(124,156,255,.13),transparent 35%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+.container{width:min(1100px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:850;letter-spacing:.3px}.brand span{color:var(--accent)}
+.navlinks{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:.93rem}
+.navlinks a:hover{color:var(--accent)}
+.nav-actions{display:flex;gap:9px}
+.iconbtn,.menu-btn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:12px;padding:9px 12px}
+.menu-btn{display:none}
+.hero{padding:78px 0 52px;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:38px}
+.eyebrow{display:inline-flex;gap:9px;align-items:center;border:1px solid var(--line);background:var(--panel);padding:7px 12px;border-radius:999px;color:var(--muted);font-size:.86rem}
+.dot{width:8px;height:8px;background:var(--accent2);border-radius:50%;box-shadow:0 0 12px var(--accent2)}
+h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.05;letter-spacing:-2px;margin:20px 0}
+.gradient{background:linear-gradient(110deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.12rem;color:var(--muted);max-width:650px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 17px;border-radius:13px;border:1px solid var(--line);font-weight:700}
+.btn.primary{background:var(--accent);color:white;border-color:transparent}
+.btn.secondary{background:var(--panel)}
+.btn:hover{transform:translateY(-2px)}
+.profile-card{background:linear-gradient(145deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:var(--shadow);text-align:center}
+.avatar{width:126px;height:126px;margin:0 auto 18px;border-radius:30px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:white;font-size:2.7rem;font-weight:900;box-shadow:0 14px 35px rgba(124,156,255,.25)}
+.profile-card h2{margin:8px 0 2px}.profile-card p{color:var(--muted);margin:0}
+.tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:18px}
+.tag{font-size:.82rem;border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 10px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.stat{padding:13px 8px;border:1px solid var(--line);border-radius:15px;background:var(--panel)}
+.stat strong{display:block;font-size:1.1rem}.stat span{font-size:.75rem;color:var(--muted)}
+section{padding:54px 0}
+.section-head{margin-bottom:25px}
+.section-head .kicker{color:var(--accent);font-weight:800;text-transform:uppercase;font-size:.78rem;letter-spacing:1.7px}
+h2.section-title{font-size:clamp(1.8rem,4vw,2.7rem);margin:5px 0 8px;letter-spacing:-.8px}
+.section-desc{color:var(--muted);max-width:700px;margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{border:1px solid var(--line);background:var(--panel);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+.card h3{margin:9px 0}.card p{color:var(--muted);margin:0}
+.card-icon{font-size:1.55rem}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.info-list{display:grid;gap:12px;margin-top:17px}
+.info-row{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line);padding:10px 0}
+.info-row span:first-child{color:var(--muted)}
+.skill{margin:17px 0}
+.skill-top{display:flex;justify-content:space-between;gap:10px;font-weight:650}
+.track{height:8px;background:var(--panel2);border-radius:99px;overflow:hidden;margin-top:8px}
+.fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px}
+.timeline{border-left:2px solid var(--line);padding-left:22px;display:grid;gap:18px}
+.timeline-item{position:relative}.timeline-item:before{content:"";position:absolute;left:-29px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.timeline-item h3{margin:0}.timeline-item small{color:var(--accent)}.timeline-item p{color:var(--muted);margin:6px 0 0}
+.project-top{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.project-label{font-size:.76rem;color:var(--accent);font-weight:800}
+.project-links{display:flex;gap:10px;margin-top:16px;color:var(--accent);font-weight:700;font-size:.9rem}
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:18px}
+.contact-item{display:flex;gap:12px;align-items:center;margin:15px 0;color:var(--muted)}
+form{display:grid;gap:12px}
+label{font-weight:650;font-size:.9rem}
+input,textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--text);font:inherit}
+textarea{min-height:120px;resize:vertical}
+.notice{font-size:.82rem;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);text-align:center}
+.backtop{position:fixed;right:18px;bottom:18px;border-radius:14px;background:var(--accent);color:white;border:0;padding:12px 15px;box-shadow:var(--shadow);display:none}
+@media(max-width:800px){
+ .hero{grid-template-columns:1fr;padding-top:48px}.profile-card{max-width:440px;margin:auto;width:100%}
+ .grid{grid-template-columns:repeat(2,1fr)}.about-grid,.contact-grid{grid-template-columns:1fr}
+ .navlinks{display:none;position:absolute;top:72px;left:0;right:0;padding:18px 4%;background:var(--panel);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}
+ .navlinks.open{display:flex}.menu-btn{display:block}
+}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.stats{gap:7px}.stat span{font-size:.68rem}h1{letter-spacing:-1.3px}.hero{gap:25px}section{padding:40px 0}}
+@media print{header,.actions,.backtop,footer,.contact-form{display:none!important}body{background:white;color:black}.card,.profile-card{box-shadow:none;border:1px solid #ddd;background:white;color:black}.hero{padding:20px 0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">SUBHASH<span>.</span></a>
+    <nav class="navlinks" id="navlinks">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#journey">Journey</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="iconbtn" id="themeBtn" aria-label="Toggle theme">☀️</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="container hero" id="home">
+  <div>
+    <div class="eyebrow"><span class="dot"></span> Portfolio · Open to learning & opportunities</div>
+    <h1>Hello, I'm<br><span class="gradient">Subhash Kumar</span></h1>
+    <p class="lead">Computer Science & Cyber Security graduate, exploring security, Python and web development. I enjoy building practical projects and learning by doing.</p>
+    <div class="actions">
+      <a class="btn primary" href="#projects">Explore my work ↗</a>
+      <a class="btn secondary" href="#contact">Contact me</a>
+      <button class="btn secondary" onclick="window.print()">Print / Save PDF</button>
+    </div>
+  </div>
+  <aside class="profile-card">
+    <div class="avatar">SK</div>
+    <h2>Subhash Kumar</h2>
+    <p>Computer Science · Cyber Security</p>
+    <div class="tags"><span class="tag">Python developer </span><span class="tag">Cyber Security</span><span class="tag">Web Development</span></div>
+    <div class="stats">
+      <div class="stat"><strong>2026</strong><span>Graduation</span></div>
+      <div class="stat"><strong>8.07</strong><span>B.Tech CGPA</span></div>
+      <div class="stat"><strong>Build</strong><span>Learn · Create</span></div>
+    </div>
+  </aside>
+</section>
+
+<section id="about">
+ <div class="container">
+  <div class="section-head"><div class="kicker">About me</div><h2 class="section-title">A little about my journey</h2><p class="section-desc">I have a technical background in Civil Engineering and Computer Science. My current focus is growing my skills in cybersecurity and software development through hands-on practice.</p></div>
+  <div class="about-grid">
+   <div class="card"><div class="card-icon">👨‍💻</div><h3>What I do</h3><p>I practice Python, explore web technologies and learn how to identify security risks responsibly. I aim to create useful, secure and user-friendly digital solutions.</p></div>
+   <div class="card"><h3>Profile details</h3><div class="info-list">
+    <div class="info-row"><span>Education</span><strong>B.Tech CSE / Cyber Security</strong></div>
+    <div class="info-row"><span>Graduation</span><strong>2026</strong></div>
+    <div class="info-row"><span>CGPA</span><strong>8.07</strong></div>
+    <div class="info-row"><span>Diploma</span><strong>Civil Engineering · 8.17</strong></div>
+   </div></div>
+  </div>
+ </div>
+</section>
+
+<section id="skills">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Skills</div><h2 class="section-title">Tools I’m learning and using</h2><p class="section-desc">Skill levels are editable estimates—update them as you gain practical experience.</p></div>
+  <div class="about-grid">
+   <div class="card">
+    <div class="skill"><div class="skill-top"><span>Python</span><span>Beginner</span></div><div class="track"><div class="fill" style="width:45%"></div></div></div>
+    <div class="skill"><div class="skill-top"><span>HTML & CSS</span><span>Learning</span></div><div class="track"><div class="fill" style="width:55%"></div></div></div>
+    <div class="skill"><div class="skill-top"><span>JavaScript</span><span>Learning</span></div><div class="track"><div class="fill" style="width:30%"></div></div></div>
+   </div>
+   <div class="card">
+    <div class="skill"><div class="skill-top"><span>Cyber Security</span><span>Developing</span></div><div class="track"><div class="fill" style="width:45%"></div></div></div>
+    <div class="skill"><div class="skill-top"><span>Linux / Termux</span><span>Learning</span></div><div class="track"><div class="fill" style="width:40%"></div></div></div>
+    <div class="skill"><div class="skill-top"><span>Git & GitHub</span><span>Next goal</span></div><div class="track"><div class="fill" style="width:20%"></div></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="journey">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Journey</div><h2 class="section-title">Education & experience</h2><p class="section-desc">A technical journey across engineering and computing.</p></div>
+  <div class="card timeline">
+   <div class="timeline-item"><small>2026</small><h3>B.Tech · Computer Science / Cyber Security</h3><p>Completed degree. CGPA: 8.07. Focused on computer science, security and software projects.</p></div>
+   <div class="timeline-item"><small>2022</small><h3>Diploma · Civil Engineering</h3><p>Completed diploma. CGPA: 8.17. Developed practical engineering and site-work understanding.</p></div>
+   <div class="timeline-item"><small>2019</small><h3>10th Standard</h3><p>Completed secondary education.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Projects</div><h2 class="section-title">Things I’m building</h2><p class="section-desc">Project cards can be updated with your GitHub links, screenshots and demos.</p></div>
+  <div class="grid">
+   <article class="card"><div class="project-top"><span class="card-icon">🛡️</span><span class="project-label">Cyber Security</span></div><h3>SSIDSecure</h3><p>Smart Secure Wi-Fi Access & Intrusion Detection System concept focused on safer network access.</p><div class="project-links"><a href="#contact">Ask about project ↗</a></div></article>
+   <article class="card"><div class="project-top"><span class="card-icon">📧</span><span class="project-label">Python · ML</span></div><h3>Email Spam Detection</h3><p>A machine-learning project exploring how email messages can be classified as spam or legitimate.</p><div class="project-links"><a href="#contact">Ask about project ↗</a></div></article>
+   <article class="card"><div class="project-top"><span class="card-icon">🧰</span><span class="project-label">Web App</span></div><h3>SiteSaathi</h3><p>Construction and labour management website idea for employee records, site attendance and project tracking.</p><div class="project-links"><a href="#contact">Project concept ↗</a></div></article>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Contact</div><h2 class="section-title">Let’s connect</h2><p class="section-desc">For opportunities, collaboration or project discussions, send a message.</p></div>
+  <div class="contact-grid">
+   <div class="card">
+    <h3>Contact details</h3>
+    <div class="contact-item">✉️ <span id="emailText">your.email@example.com</span></div>
+    <div class="contact-item">🔗 <span>LinkedIn: add your profile URL</span></div>
+    <div class="contact-item">💻 <span>GitHub: add your username</span></div>
+    <p class="notice">Replace the sample email and profile details in this file with your own before publishing.</p>
+    <button class="btn secondary" id="copyEmail">Copy email</button>
+   </div>
+   <div class="card contact-form">
+    <h3>Send a message</h3>
+    <form id="contactForm">
+     <div><label for="cname">Your name</label><input id="cname" required placeholder="Enter your name"></div>
+     <div><label for="cemail">Your email</label><input id="cemail" type="email" required placeholder="you@example.com"></div>
+     <div><label for="cmessage">Message</label><textarea id="cmessage" required placeholder="Write your message..."></textarea></div>
+     <button class="btn primary" type="submit">Prepare email ↗</button>
+     <p class="notice">This demo opens your email app. It does not store or send messages from this local website.</p>
+    </form>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+<footer><div class="container">© <span id="year"></span> Subhash Kumar · Built with HTML, CSS & JavaScript</div></footer>
+<button class="backtop" id="backtop" aria-label="Back to top">↑</button>
+<script>
+const root=document.documentElement;
+const themeBtn=document.getElementById('themeBtn');
+themeBtn.addEventListener('click',()=>{
+ const next=root.getAttribute('data-theme')==='light'?'dark':'light';
+ root.setAttribute('data-theme',next);
+ themeBtn.textContent=next==='light'?'🌙':'☀️';
+});
+const menuBtn=document.getElementById('menuBtn');
+const navlinks=document.getElementById('navlinks');
+menuBtn.addEventListener('click',()=>navlinks.classList.toggle('open'));
+navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navlinks.classList.remove('open')));
+document.getElementById('year').textContent=new Date().getFullYear();
+const backtop=document.getElementById('backtop');
+window.addEventListener('scroll',()=>backtop.style.display=window.scrollY>400?'block':'none');
+backtop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+document.getElementById('copyEmail').addEventListener('click',async()=>{
+ const email=document.getElementById('emailText').textContent.trim();
+ try{await navigator.clipboard.writeText(email);alert('Email copied: '+email)}
+ catch(e){prompt('Copy email:',email)}
+});
+document.getElementById('contactForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const name=document.getElementById('cname').value.trim();
+ const email=document.getElementById('cemail').value.trim();
+ const message=document.getElementById('cmessage').value.trim();
+ const recipient=document.getElementById('emailText').textContent.trim();
+ if(recipient==='your.email@example.com'){alert('Please edit the sample email address in the HTML first.');return}
+ const subject=encodeURIComponent('Portfolio message from '+name);
+ const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nMessage:\n'+message);
+ window.location.href='mailto:'+recipient+'?subject='+subject+'&body='+body;
+});
+</script>
+</body>
+</html>
